@@ -8,10 +8,12 @@ jobs:
     steps:
       # скачиваем репозиторий
       - uses: actions/checkout@v4
+      # запускаем selenoid
+      - uses: Xotabu4/selenoid-github-action@v2
       # настраиваем java
       - uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
           java-version: '15'
       # запуск тестов
-      - run: ./gradlew clean test
+      - run: ./gradlew clean test -Dselenide.remote=http://localhost:4444/wd/hub
