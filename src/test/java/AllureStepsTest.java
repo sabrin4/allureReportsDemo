@@ -3,6 +3,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -11,6 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
+@Tag("terminal")
 public class AllureStepsTest {
     private final String REPOSITORY = "eroshenkoam/allure-example";
     private final int ISSUE_NUMBER = 80;
